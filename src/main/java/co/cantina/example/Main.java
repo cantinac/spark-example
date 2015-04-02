@@ -11,7 +11,7 @@ public class Main {
         
         get("/books", APPLICATION_JSON, (req, res) -> {
             
-            res.type(APPLICATION_JSON);
+            res.type(APPLICATION_JSON + "; charset=utf-8");
             
             String title = req.queryParams("title"); 
             if (title == null) {
