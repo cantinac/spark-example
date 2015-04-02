@@ -4,10 +4,14 @@ import static co.cantina.example.Application.*;
 import static spark.Spark.*;
 
 public class Main {
+    
+    private static final String APPLICATION_JSON = "application/json";
 
     public static void main(String[] args) {
         
-        get("/books", "application/json", (req, res) -> {
+        get("/books", APPLICATION_JSON, (req, res) -> {
+            
+            res.type(APPLICATION_JSON);
             
             String title = req.queryParams("title"); 
             if (title == null) {
